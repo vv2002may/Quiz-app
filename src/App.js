@@ -3,7 +3,7 @@ import QuizApp from './components/QuizApp';
 import './App.css'
 const App = () => {
   return (
-    <div>
+    <div className='aContainer'>
       <QuizApp />
     </div>
   );
