@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import questionsData from './questions.json';
 
-const TOTAL_TIME = 10; // 10 minutes in seconds
+const TOTAL_TIME = 600; // 10 minutes in seconds
 
 const QuizApp = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
