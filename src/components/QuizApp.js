@@ -65,9 +65,9 @@ const QuizApp = () => {
 
   if (!isFullScreen) {
     return (
-      <div>
-        <h2>Please enable full-screen mode to take the quiz.</h2>
-        <button onClick={handleFullScreen}>Go Full Screen</button>
+      <div className='head-container'>
+        <p className='header'>Please enable full-screen mode to take the quiz.</p>
+        <button onClick={handleFullScreen} id='fsBtn'>Full Screen</button>
       </div>
     );
   }

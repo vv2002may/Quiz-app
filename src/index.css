@@ -1,18 +1,18 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 h1, h2 {
   text-align: center;
 }
 
-button {
+/* button {
   display: block;
   margin: 10px auto;
   padding: 10px 20px;
   font-size: 16px;
-}
+} */
 
 div {
   text-align: center;
