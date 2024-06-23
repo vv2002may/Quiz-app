@@ -32,30 +32,7 @@
    margin-top: 10vmax;
    /* border-style: solid; */
 }
-.quizContainer{
-   display: flex;
-   flex-direction: column;
-   /* text-align: center; */
-   align-items: center;
-   width: 100%;
-   /* border: 2px solid red; */
-}
 
-.quizBtn > button{
-   /* width: 20vmax; */
-   border: none;
-   margin: .5vmax;
-   text-align: left;
-   font-size: 1.5vmax;
-   padding: .5vmax;
-   border-radius: 5px;
-   cursor: pointer;
-   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.quizBtn > button:hover{
-   background-color: rgb(59, 62, 61);
-   color: white;
-}
 .navBar{
    display: flex;
    justify-content: space-between;
@@ -84,12 +61,41 @@
 
 .queContainer{
    /* border: 2px solid; */
-   margin: 5vmax;
+   /* display: flex; */
+   /* flex-direction: column; */
+   /* justify-content: left; */
+   margin: 10vmax 10vmax;
    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    
 }
 
 .queContainer > p{
    font-size: 2vmax;
-   font-weight: 400
+   font-weight: 400;
+}
+
+.quizContainer{
+   /* display: flex; */
+   /* flex-direction: column; */
+   /* text-align: center; */
+   /* align-items: center; */
+   /* width: 100%; */
+   /* border: 2px solid red; */
+}
+
+.quizBtn > button{
+   /* width: 20vmax; */
+   border: none;
+   margin: .5vmax;
+   text-align: left;
+   font-size: 1.5vmax;
+   padding: .5vmax;
+   border-radius: 5px;
+   cursor: pointer;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   transition: all 0.3s;
+}
+.quizBtn > button:hover{
+   background-color: rgb(59, 62, 61);
+   color: white;
 }

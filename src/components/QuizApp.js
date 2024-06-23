@@ -47,7 +47,7 @@ const QuizApp = () => {
       setIsFullScreen(false);
     }
   };
-
+  
   useEffect(() => {
     document.onfullscreenchange = () => {
       setIsFullScreen(!!document.fullscreenElement);
@@ -82,18 +82,23 @@ const QuizApp = () => {
 
   return (
     <div className='quizContainer'>
+
       <div className='navBar'>
         <h1>Quiz</h1>
         <h2>Time Remaining: {Math.floor(timer / 60)}:{timer % 60}</h2>
       </div>
+
       <div className='queContainer'>
-        <p>Question {currentQuestionIndex + 1} : {quizData[currentQuestionIndex]?.question}</p>
+
+        <p>Question {currentQuestionIndex + 1 }:{quizData[currentQuestionIndex]?.question}</p>
         {['A', 'B', 'C', 'D'].map((optionKey) => (
           <div key={optionKey} className='quizBtn'>
-            <button onClick={handleOptionClick}>{quizData[currentQuestionIndex]?.[optionKey]}</button>
+            <button onClick={handleOptionClick}>{optionKey} : {quizData[currentQuestionIndex]?.[optionKey]}</button>
           </div>
         ))}
+
       </div>
+
     </div>
   );
 };
