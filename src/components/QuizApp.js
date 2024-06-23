@@ -11,13 +11,20 @@ const QuizApp = () => {
   const [quizEnded, setQuizEnded] = useState(false);
 
   useEffect(() => {
-    const savedQuestionIndex = localStorage.getItem('currentQuestionIndex');
-    const savedTimer = localStorage.getItem('timer');
-    if (savedQuestionIndex !== null) {
-      setCurrentQuestionIndex(parseInt(savedQuestionIndex, 10));
-    }
-    if (savedTimer !== null) {
-      setTimer(parseInt(savedTimer, 10));
+    const savedQuizEnded = localStorage.getItem('quizEnded');
+    if (savedQuizEnded === 'true') {
+      setQuizEnded(true);
+      setCurrentQuestionIndex(0);
+      setTimer(TOTAL_TIME);
+    } else {
+      const savedQuestionIndex = localStorage.getItem('currentQuestionIndex');
+      const savedTimer = localStorage.getItem('timer');
+      if (savedQuestionIndex !== null) {
+        setCurrentQuestionIndex(parseInt(savedQuestionIndex, 10));
+      }
+      if (savedTimer !== null) {
+        setTimer(parseInt(savedTimer, 10));
+      }
     }
     setQuizData(questionsData);
   }, []);
@@ -37,6 +44,10 @@ const QuizApp = () => {
   useEffect(() => {
     localStorage.setItem('currentQuestionIndex', currentQuestionIndex);
   }, [currentQuestionIndex]);
+
+  useEffect(() => {
+    localStorage.setItem('quizEnded', quizEnded);
+  }, [quizEnded]);
 
   const handleFullScreen = () => {
     if (!document.fullscreenElement) {
@@ -61,20 +72,24 @@ const QuizApp = () => {
       document.exitFullscreen();
       setIsFullScreen(false);
       setQuizEnded(true);
+      localStorage.setItem('quizEnded', 'true');
       // alert('Quiz completed!'); 
     }
   };
 
-  // const onClose=() =>{
-  //   window.opener = null;
-  //   window.open('', '_self');
-  //   window.close();
-  //   }
+  const onClose = () => {
+    localStorage.removeItem('currentQuestionIndex');
+    localStorage.removeItem('timer');
+    localStorage.removeItem('quizEnded');
+    window.opener = null;
+    window.open('', '_self');
+    window.close();
+  };
 
   if (quizEnded) {
     return (
       <div className='quizEnds'>
-        <button  className='endBtn'>The Quiz Ends</button>
+        <button onClick={onClose} className='endBtn'>The Quiz Ends</button>
       </div>
     );
   }

@@ -112,4 +112,10 @@
    border-radius: 5px;
    box-shadow: 5px 7px 10px;
    padding: 1vmax;
+   cursor: pointer;
+   transition: all o.3s;
+}
+.endBtn:hover{
+   background-color: bisque;
+   color: rgb(211, 22, 22);
 }
