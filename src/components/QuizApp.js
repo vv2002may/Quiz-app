@@ -86,7 +86,7 @@ const QuizApp = () => {
     window.close();
   };
 
-  if (quizEnded) {
+  if (quizEnded || timer === 0) {
     return (
       <div className='quizEnds'>
         <button onClick={onClose} className='endBtn'>The Quiz Ends</button>
