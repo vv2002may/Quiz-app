@@ -58,11 +58,26 @@ const QuizApp = () => {
     if (currentQuestionIndex < quizData.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
+      document.exitFullscreen();
+      setIsFullScreen(false);
       setQuizEnded(true);
-      alert('Quiz completed!');
+      // alert('Quiz completed!'); 
     }
   };
 
+  // const onClose=() =>{
+  //   window.opener = null;
+  //   window.open('', '_self');
+  //   window.close();
+  //   }
+
+  if (quizEnded) {
+    return (
+      <div className='quizEnds'>
+        <button  className='endBtn'>The Quiz Ends</button>
+      </div>
+    );
+  }
   if (!isFullScreen) {
     return (
       <div className='head-container'>
@@ -71,15 +86,6 @@ const QuizApp = () => {
       </div>
     );
   }
-
-  if (quizEnded) {
-    return (
-      <div>
-        <h1>The quiz ends</h1>
-      </div>
-    );
-  }
-
   return (
     <div className='quizContainer'>
 
